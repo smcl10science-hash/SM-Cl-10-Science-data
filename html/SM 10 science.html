@@ -20,7 +20,13 @@ body { display:flex; height:100vh; overflow:hidden; }
   flex:1;
   background: url("https://i.ibb.co/RTjxjG88/class12.jpg") no-repeat center center;
   background-size: cover;
-  overflow-y:auto !important;
+  
+  
+  
+  overflow-y:auto;
+  
+  
+  
   overflow-x:hidden;
   position:relative;
   display:flex;
@@ -45,7 +51,7 @@ body { display:flex; height:100vh; overflow:hidden; }
 #sidebar h2{font-size:20px;margin-bottom:10px;color:#38bdf8}
 .chapter{margin-bottom:10px;background:#334155;padding:10px;border-radius:8px;cursor:pointer}
 .subList{display:none;padding:10px;background:#475569;margin-top:5px;border-radius:6px}
-.subList div{Padding:6px;background:#64748b;margin:5px 0;border-radius:6px;cursor:pointer}
+.subList div{padding:6px;background:#64748b;margin:5px 0;border-radius:6px;cursor:pointer}
 .subList div:hover{background:#94a3b8}
 
 /* IMAGE / PDF WRAPPER */
@@ -193,6 +199,93 @@ body { display:flex; height:100vh; overflow:hidden; }
 }
 
 	
+	
+	
+#viewer {
+  overflow-y:auto;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+  overscroll-behavior: contain;
+}
+
+#contentImg{
+  will-change: transform;
+  backface-visibility: hidden;
+  touch-action: pinch-zoom;
+}
+
+
+	#bookmarkBtn.active{
+  background: gold;
+  color: black;
+}
+	
+.chapterInfo{
+    font-size:10px;
+    margin-top:3px;
+    line-height:1.2;
+}
+
+.chapterInfo .syllabus{
+    color:#ffff00;   /* bright yellow */
+    font-weight:bold;
+    display:block;
+}
+
+.chapterInfo .subject{
+    color:#ff3030;   /* bright red */
+    font-weight:bold;
+    display:block;
+}	
+	
+.subject-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+  width:100%;
+}
+
+.subject-buttons button{
+  padding:9px;
+  font-size:10px;
+  border:none;
+  border-radius:4px;
+  color:white;
+  cursor:pointer;
+}
+	
+/* Chemistry */
+.chemistry{
+  background:#e74c3c;
+}
+.chemistry:hover{
+  background:#c0392b;
+}
+
+/* Biology */
+.biology{
+  background:#27ae60;
+}
+.biology:hover{
+  background:#1e8449;
+}
+
+/* Physics */
+.physics{
+  background:#3498db;
+}
+.physics:hover{
+  background:#21618c;
+}
+
+/* Environment */
+.environment{
+  background:#f39c12;
+}
+.environment:hover{
+  background:#d68910;
+}	
+	
 </style>
 </head>
 <body>
@@ -202,15 +295,27 @@ body { display:flex; height:100vh; overflow:hidden; }
 
 <div id="sidebar" role="navigation" aria-label="Chapters">
 
-  <!-- ★★ ADDED BUTTON HERE ★★ -->
-<a href="https://smchemistry12-afk.github.io/SM-Ans-Srote-html/store/chemistry 10 store.html" 
+    <!-- ★★ ADDED BUTTON HERE ★★ -->
+<a href="https://smcl10science-hash.github.io/SM-Cl-10-Science-data/store/cass  12  physsics  store.html" 
    class="buyBtn" target="_blank">BUY HARD COPY</a>
+   
+<div class="subject-buttons">
+  <button class="chemistry" onclick="showClass('Chemistry')">Chemistry</button>
+  <button class="biology" onclick="showClass('Biology')">Biology</button>
+  <button class="physics" onclick="showClass('Physics')">Physics</button>
+  <button class="environment" onclick="showClass('Enviroment')">Environment</button>
+</div>
 
 <h2>Chapters</h2>
+<div id="Chemistry">
 
 <div class="chapter">Chapter 1 CHEMICAL REACTIONS AND EQUATIONS
+		<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Chemistry**</span>
+</div>
     <div class="subList">
-        <div onclick="loadSub('C1_T1')">TOPPER’S SPECIAL NOTES</div>
+        <div onclick="loadSub('C101_T101')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C1_Q1')">SUBJECTIVE QUESTION WITH SOLUTION</div>
         <div onclick="loadSub('C1_N1')">NCERT</div>
         <div onclick="loadSub('C1_A1')">NCERT SOLUTION</div>
@@ -218,6 +323,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 2 ACIDS, BASES AND SALTS
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Chemistry**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C2_T2')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C2_Q2')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -227,6 +336,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 3 METALS AND NON-METALS
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Chemistry**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C3_T3')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C3_Q3')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -236,6 +349,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 4 CARBON AND ITS COMPOUNDS
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Chemistry**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C4_T4')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C4_Q4')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -244,7 +361,16 @@ body { display:flex; height:100vh; overflow:hidden; }
     </div>
 </div>
 
+
+</div>   <!-- CLOSE Chemistry -->
+
+<div id="Biology" style="display:none;">
+
 <div class="chapter">Chapter 5 LIFE PROCESSES
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Biology**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C5_T5')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C5_Q5')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -254,6 +380,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 6 CONTROL AND COORDINATION
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Biology**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C6_T6')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C6_Q6')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -263,6 +393,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 7 HOW DO ORGANISMS REPRODUCE?
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Biology**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C7_T7')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C7_Q7')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -271,7 +405,16 @@ body { display:flex; height:100vh; overflow:hidden; }
     </div>
 </div>
 
+
+</div>   <!-- CLOSE Physics -->
+
+<div id="Physics" style="display:none;">
+
 <div class="chapter">LIGHT – REFLECTION AND REFRACTION
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Physics**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C8_T8')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C8_Q8')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -281,6 +424,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 9 THE HUMAN EYE AND THE COLOURFUL WORLD
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Physics**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C9_T9')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C9_Q9')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -290,6 +437,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 10 ELECTRICITY
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Physics**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C10_T10')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C10_Q10')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -299,6 +450,10 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 <div class="chapter">Chapter 11 MAGNETIC EFFECTS OF ELECTRIC CURRENT
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Physics**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C11_T11')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C11_Q11')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -308,7 +463,16 @@ body { display:flex; height:100vh; overflow:hidden; }
 </div>
 
 
+</div>   <!-- CLOSE Physics -->
+
+<div id="Enviroment" style="display:none;">
+
+
 <div class="chapter">Chapter 12 OUR ENVIRONMENT
+<div class="chapterInfo">
+<span class="syllabus">Class 10 + Competitive exam level</span>
+<span class="subject">**Environment**</span>
+</div>
     <div class="subList">
         <div onclick="loadSub('C14_T14')">TOPPER’S SPECIAL NOTES</div>
         <div onclick="loadSub('C14_Q14')">SUBJECTIVE QUESTION WITH SOLUTION</div>
@@ -316,7 +480,12 @@ body { display:flex; height:100vh; overflow:hidden; }
         <div onclick="loadSub('C14_A14')">NCERT SOLUTION</div>
     </div>
 </div>
+
+
+
+
 </div>
+</div> <!-- CLOSE SIDEBAR -->
 
 <div id="viewer" role="main" aria-label="Document viewer">
   <div id="imgWrapper">
@@ -331,9 +500,14 @@ body { display:flex; height:100vh; overflow:hidden; }
   <button class="btn" id="prevBtn" aria-label="Previous">◀</button>
   <input type="number" id="pageInput" aria-label="Page number">
   <button class="btn" id="nextBtn" aria-label="Next">▶</button>
+  <button class="btn" id="bookmarkBtn">🔖</button>
+  <button class="btn" onclick="showBookmarks()">📑</button>
+  	 <button class="btn" id="solutionBtn" style="display:none;" 
+onclick="window.open('https://ai-question-and-its-solution-3oip.onrender.com')">🧠</button>
   <button class="btn" id="zoomIn" aria-label="Zoom in">⊕</button>
   <button class="btn" id="zoomOut" aria-label="Zoom out">⊖</button>
-     <button class="btn" id="homeBtn" onclick="window.open('https://gten-educational-platform.github.io/Class-12/class 10 button.html')">🏠</button>
+     <button class="btn" id="homeBtn" onclick="window.open('https://gten-educational-platform.github.io/Class-12/class 12 button.html')">🏠</button>
+
 </div>
 
 <script>
@@ -341,10 +515,70 @@ body { display:flex; height:100vh; overflow:hidden; }
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
 
 /* ================= DATA (preserved) ================= */
+
+
+
+
+
 let data = {
-	  "C1_T1":[
+
+	 "C1211_C1211":[
+  
+    "https://g10educationalplatform-physics.github.io/SM-IIT-JEE/THERMOMETRY/Contents-THERMOMETRY  2026_page-0001.jpg"
+     ],
+		  "C101_T101":[
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0001.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0002.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0003.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0004.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0005.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0006.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0007.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0008.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0009.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0010.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0011.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0012.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0013.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0014.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0015.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0016.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0017.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0018.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0019.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0020.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0021.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0022.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0023.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0024.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0025.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0026.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0027.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0028.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0029.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0030.jpg",
+   "https://class-103.github.io/SM-Science-Data/Che Rec & Equ/Chemical reaction and quuation TH_page-0031.jpg"
+			 
+  
+   
+  
+     ],
+	 	  "C111_Q111":[
+  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
+    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
+    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
+     ],
+	 	  "C111_N111":[
+      "https://jitenclass9.github.io/S-M-MATTER-IN-OUR-SUR/MATTER IN OUR SURROUNDING NCERT.pdf"
+     ],
+	  "C111_A111":[
+  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
+    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
+    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
+     ],
+	  "C_T":[
   "https://chemistry-g10ep.github.io/SM-Solution-/SOLUTIONS-2025_page-0001.jpg",
- "https://chemistry-g10ep.github.io/SM-Solution-/SOLUTIONS-2025_page-0089.jpg"
+   "https://chemistry-g10ep.github.io/SM-Solution-/SOLUTIONS-2025_page-0089.jpg"
   
      ],
 	 	  "C_Q1":[
@@ -475,7 +709,7 @@ let data = {
 	 
 	 	  "C7_T7":[
   "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0030.jpg"
+   "https://g10educationalplatform-physics.github.io/SM-12-PHY-AC/THEORY/7 ALTERNATING CURRENT AND ELECTRICAL MACHINES 2025_page-0030.jpg"
   
      ],
 	 	  "C_Q":[
@@ -496,10 +730,9 @@ let data = {
 	 
 	 
 	 
-	 	  "C_T":[
-  "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
-    "https://gten-educational-platform.github.io/Class-12/Centre Prospectus.pdf",
-    "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0003.jpg"
+	 	  "C8_T8":[
+	"https://chemistry-g10ep.github.io/SM-haloalkane-and-haloaren-iit-jee/Halogen containing compounds theory-2026_page-0001.jpg",
+    "https://chemistry-g10ep.github.io/SM-haloalkane-and-haloaren-iit-jee/Halogen containing compounds theory-2026_page-0061.jpg"
      ],
 	 	  "C_Q":[
   "https://gten-educational-platform.github.io/SEETS-JPEG/SET AND RELATIN theory-2025_page-0001.jpg",
@@ -563,7 +796,7 @@ let data = {
 	 
 	 	  "C11_T11":[
   "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0001.jpg",
-  "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0015.jpg"
+ "https://g10educationalplatform-physics.github.io/SM-12-PHY-DUALNATURE/THEORY/11 DUAL NATURE OF RADIATION & MATTER 2025_page-0015.jpg"
     
      ],
 	 	  "C_Q":[
@@ -654,11 +887,15 @@ let data = {
 	
 	
 	
-	
- 
-};
+	};
+
+
+
+
+
 /* ================= STATE VARS ================= */
 let currentList = [], index = 0;
+let currentCode = "";   // ⭐ ADD THIS LINE
 let zoomLevel = 1, autoScale = 1;
 let img = document.getElementById('contentImg');
 let viewer = document.getElementById('viewer');
@@ -699,10 +936,25 @@ menuBtn.addEventListener('click', () => {
 
 /* ============== LOAD SUBLIST ============== */
 function loadSub(code){
+ currentCode = code;
+
+ // ⭐ SHOW SOLUTION BUTTON ONLY FOR CX_QX
+ const solutionBtn = document.getElementById("solutionBtn");
+ if(code.includes("_Q")){
+     solutionBtn.style.display = "inline-block";
+ }else{
+     solutionBtn.style.display = "none";
+ }
+ 
   currentList = data[code] || [];
   preloadFirst(currentList);   // ← new line
 
   index = 0;
+  // Restore last page if saved
+let savedPage = localStorage.getItem("page_" + code);
+if(savedPage){
+  index = parseInt(savedPage);
+}
   imgX = imgY = 0;
 
   exitPDF();
@@ -733,6 +985,7 @@ function preloadFirst(list){
 /* ============== LOAD PAGE (IMAGE or PDF) ============== */
 function loadPage(first=false){
   let url = currentList[index];
+   localStorage.setItem("page_" + currentCode, index); // ⭐ SAVE PAGE
   if(!url) return;
   if(url.toLowerCase().endsWith('.pdf')) { enterPDF(url); return; }
 
@@ -776,9 +1029,24 @@ if (!isDesktop && w >= 900 && w < 1200 && w > h) {
   // in case onload doesn't fire or is cached, still update
   pageNum.textContent = `Page ${index+1} / ${currentList.length}`;
   pageInput.value = index+1;
+  updateBookmarkIcon();   // ⭐ update bookmark highlight
   preloadNext();
 
 }
+function updateBookmarkIcon(){
+
+ let key = "bookmark_" + currentCode;
+
+ let bookmarks = JSON.parse(localStorage.getItem(key)) || [];
+
+ if(bookmarks && bookmarks.includes(index)){
+   bookmarkBtn.classList.add("active");
+ }else{
+   bookmarkBtn.classList.remove("active");
+ }
+
+}
+
 
 /* ============== CLAMP UTILITY ============== */
 function clamp(value, min, max){ return Math.min(Math.max(value, min), max); }
@@ -786,18 +1054,56 @@ function clamp(value, min, max){ return Math.min(Math.max(value, min), max); }
 /* ============== NAVIGATION ============== */
 nextBtn.addEventListener('click', ()=> {
   if(pdfMode.active){
-    if(pdfMode.page < pdfMode.total){ pdfMode.page++; renderPDFPage(); return; }
-    else { exitPDF(); if(index < currentList.length-1){ index++; imgX = imgY = 0; loadPage(true); } return; }
+    if(pdfMode.page < pdfMode.total){ 
+      pdfMode.page++; 
+      renderPDFPage();
+      viewer.scrollTop = 0;   // ADD THIS
+      return; 
+    }
+    else { 
+      exitPDF(); 
+      if(index < currentList.length-1){ 
+        index++; 
+        imgX = imgY = 0; 
+        loadPage(true); 
+        viewer.scrollTop = 0;   // ADD THIS
+      } 
+      return; 
+    }
   }
-  if(index < currentList.length-1){ index++; imgX = imgY = 0; loadPage(true); }
+  if(index < currentList.length-1){ 
+    index++; 
+    imgX = imgY = 0; 
+    loadPage(true); 
+    viewer.scrollTop = 0;   // ADD THIS
+  }
 });
 
 prevBtn.addEventListener('click', ()=> {
   if(pdfMode.active){
-    if(pdfMode.page > 1){ pdfMode.page--; renderPDFPage(); return; }
-    else { exitPDF(); if(index > 0){ index--; imgX = imgY = 0; loadPage(true); } return; }
+    if(pdfMode.page > 1){ 
+      pdfMode.page--; 
+      renderPDFPage();
+      viewer.scrollTop = 0;   // ADD THIS
+      return; 
+    }
+    else { 
+      exitPDF(); 
+      if(index > 0){ 
+        index--; 
+        imgX = imgY = 0; 
+        loadPage(true); 
+        viewer.scrollTop = 0;   // ADD THIS
+      } 
+      return; 
+    }
   }
-  if(index > 0){ index--; imgX = imgY = 0; loadPage(true); }
+  if(index > 0){ 
+    index--; 
+    imgX = imgY = 0; 
+    loadPage(true); 
+    viewer.scrollTop = 0;   // ADD THIS
+  }
 });
 
 pageInput.addEventListener('input', ()=> {
@@ -847,7 +1153,8 @@ viewer.addEventListener('touchstart', e => {
         if(canvas){ pdfX = parseFloat(canvas.dataset.x||0); pdfY = parseFloat(canvas.dataset.y||0); canvas.style.pointerEvents = 'auto'; }
       }
     } else {
-      drag = true; startX = e.touches[0].pageX; startY = e.touches[0].pageY; startImgX = imgX; startImgY = imgY;
+  drag = zoomLevel > autoScale + 0.01;
+ startX = e.touches[0].pageX; startY = e.touches[0].pageY; startImgX = imgX; startImgY = imgY;
     }
   } else if(e.touches.length === 2){
     lastDist = Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
@@ -859,8 +1166,35 @@ viewer.addEventListener('touchstart', e => {
   }
 });
 
+
+
+
+
+
 viewer.addEventListener('touchmove', e => {
-  if(e.cancelable) e.preventDefault();
+
+  // ⭐ Always allow pinch zoom
+  if(e.touches.length === 2){
+    if(e.cancelable) e.preventDefault();
+  }
+
+  // ⭐ Allow normal scrolling when single finger & not zoomed
+  else if(!pdfMode.active && zoomLevel <= autoScale + 0.01){
+    return;
+  }
+
+  else if(pdfMode.active && Math.abs(pdfMode.scale - 1) < 0.01){
+    return;
+  }
+
+  else {
+    if(e.cancelable) e.preventDefault();
+  }
+
+
+  
+  
+  
   if(e.touches.length === 1){
     if(pdfMode.active && pdfDrag){
       const canvas = document.getElementById('pdfPage');
@@ -899,9 +1233,23 @@ viewer.addEventListener('touchmove', e => {
       // ensure canvas receives pointer events when zoomed
       canvas.style.pointerEvents = 'auto';
     } else {
-      zoomLevel = Math.max(autoScale, Math.min(4, zoomLevel * zoomChange));
-      imgX = pinchStart.left + (pinchCenter.x * (zoomChange - 1));
-      imgY = pinchStart.top + (pinchCenter.y * (zoomChange - 1));
+	
+      let newZoom = Math.max(autoScale, Math.min(4, zoomLevel * zoomChange));
+
+// ⭐ Calculate pinch focus relative to image
+let dx = pinchCenter.x - imgX;
+let dy = pinchCenter.y - imgY;
+
+// ⭐ Adjust position so pinch stays fixed
+imgX -= dx * (newZoom / zoomLevel - 1);
+imgY -= dy * (newZoom / zoomLevel - 1);
+
+zoomLevel = newZoom;
+
+	  
+	  
+	  
+	  
       let vw = viewer.clientWidth, vh = viewer.clientHeight;
       let iw = img.naturalWidth * zoomLevel, ih = img.naturalHeight * zoomLevel;
       imgX = clamp(imgX, Math.min(0, vw - iw), 0); imgY = clamp(imgY, Math.min(0, vh - ih), 0);
@@ -1082,6 +1430,85 @@ function preloadNext() {
 }
 
 
+
+
+
+
+
+function showClass(cls){
+
+  const subjects = ["Chemistry","Biology","Physics","Enviroment"];
+
+  subjects.forEach(id=>{
+    document.getElementById(id).style.display = "none";
+  });
+
+  document.getElementById(cls).style.display = "block";
+}
+
+
+
+
+
+
+
+function showBookmarks(){
+
+ if(!currentCode) return;
+
+ let key = "bookmark_" + currentCode;
+
+ let bookmarks = JSON.parse(localStorage.getItem(key)) || [];
+
+ if(bookmarks.length === 0){
+   alert("No bookmarks saved.");
+   return;
+ }
+
+ bookmarks.sort((a,b)=>a-b);
+
+ let popup = document.createElement("div");
+
+ popup.style.position = "fixed";
+ popup.style.top = "50%";
+ popup.style.left = "50%";
+ popup.style.transform = "translate(-50%,-50%)";
+ popup.style.background = "#222";
+ popup.style.color = "white";
+ popup.style.padding = "15px";
+ popup.style.borderRadius = "8px";
+ popup.style.zIndex = "9999";
+ popup.style.maxHeight = "300px";
+ popup.style.overflowY = "auto";
+
+ let html = "<h3>Bookmarks</h3>";
+
+ bookmarks.forEach(p=>{
+   html += `<div style="padding:5px;cursor:pointer" onclick="jumpToBookmark(${p})">Page ${p+1}</div>`;
+ });
+
+ html += `<div style="margin-top:10px;text-align:center">
+ <button onclick="this.parentElement.parentElement.remove()">Close</button>
+ </div>`;
+
+ popup.innerHTML = html;
+
+ document.body.appendChild(popup);
+
+}
+function jumpToBookmark(p){
+
+ index = p;
+
+ loadPage();
+
+ document.querySelectorAll("div").forEach(el=>{
+   if(el.style && el.style.zIndex === "9999"){
+     el.remove();
+   }
+ });
+
+}
 /* ===== BUY POPUP LOGIC (FIXED) ===== */
 /* ===== BUY POPUP LOGIC (DELAY + OUTSIDE CLICK) ===== */
 document.addEventListener('DOMContentLoaded', () => {
@@ -1118,7 +1545,26 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+let bookmarkBtn = document.getElementById("bookmarkBtn");
 
+bookmarkBtn.addEventListener("click", function(){
+
+ if(!currentCode) return;
+
+ let key = "bookmark_" + currentCode;
+
+ let bookmarks = JSON.parse(localStorage.getItem(key)) || [];
+
+ if(bookmarks.includes(index)){
+     bookmarks = bookmarks.filter(p => p !== index);
+     bookmarkBtn.classList.remove("active");
+ }else{
+     bookmarks.push(index);
+     bookmarkBtn.classList.add("active");
+ }
+
+ localStorage.setItem(key, JSON.stringify(bookmarks));
+});
 
 </script>
 <!-- ===== BUY HARD COPY POPUP ===== -->
@@ -1131,7 +1577,7 @@ document.addEventListener('DOMContentLoaded', () => {
     </p>
 
     <!-- 🔗 Replace the link later -->
-    <a href="https://smchemistry12-afk.github.io/SM-Ans-Srote-html/store/chemistry 12 store.html" id="buyPopupBtn" target="_blank">BUY HARD COPY</a>
+    <a href="https://smcl10science-hash.github.io/SM-Cl-10-Science-data/store/cass  12  physsics  store.html" id="buyPopupBtn" target="_blank">BUY HARD COPY</a>
 
     <button id="closePopup">Maybe Later</button>
   </div>
@@ -1140,3 +1586,4 @@ document.addEventListener('DOMContentLoaded', () => {
 </body>
 
 </html>
+
